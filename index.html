@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Feed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .news-item {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>News Feed</h1>
+    <div id="news-container">
+        <!-- News items will be inserted here -->
+    </div>
+
+    <script>
+        // Example of adding static news items
+        const newsContainer = document.getElementById('news-container');
+        const newsItems = [
+            { title: 'News Headline 1', link: '#', description: 'Brief description of news 1.' },
+            { title: 'News Headline 2', link: '#', description: 'Brief description of news 2.' },
+            { title: 'News Headline 3', link: '#', description: 'Brief description of news 3.' }
+        ];
+
+        newsItems.forEach(item => {
+            const newsItemDiv = document.createElement('div');
+            newsItemDiv.className = 'news-item';
+            newsItemDiv.innerHTML = `<h2><a href="${item.link}">${item.title}</a></h2><p>${item.description}</p>`;
+            newsContainer.appendChild(newsItemDiv);
+        });
+    </script>
+</body>
+</html>
